@@ -7,7 +7,7 @@ const baseUrl = process.env.BASEURL;
 const email = process.env.EMAIL;
 const token = process.env.TOKEN;
 
-axios.create({
+const apiClient = axios.create({
   baseURL: baseUrl,
   headers: {
     Authorization: `Basic ${Buffer.from(`${email}:${token}`).toString(
@@ -16,3 +16,5 @@ axios.create({
     Accept: 'application/json',
   },
 });
+
+export default apiClient
